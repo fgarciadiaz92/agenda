@@ -5,9 +5,11 @@
 </script>
 
 <div class="app">
-<Navbar/>
+	<Navbar/>
 	<main>
+		<div class="container-fluid">
 		<slot />
+		</div>
 	</main>
 
 </div>
