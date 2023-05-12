@@ -11,7 +11,7 @@
 	  <div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
 		  <li class="nav-item">
-			<a class="nav-link active" aria-current="page" href="{base}/resumen">Resumen</a>
+			<a class="nav-link active" aria-current="page" href="{base}/resumen">Materias</a>
 		  </li>
 		  <li class="nav-item">
 			<a class="nav-link" href="{base}/planer">Planer</a>
@@ -19,6 +19,17 @@
 		  <li class="nav-item">
 			<a class="nav-link" href="{base}/agenda">Agenda</a>
 		  </li>
+		  <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			  MirroApp
+			</a>
+			<ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="{base}/mirroApp/tarjeta">Tarjetas</a></li>
+			  <li><a class="dropdown-item" href="{base}/mirroApp/configuracion">Configuracion</a></li>
+			</ul>
+		  </li>
+  
+
 		  <li class="nav-item">
 			<a class="nav-link disabled">Otros</a>
 		  </li>

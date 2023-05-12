@@ -16,7 +16,7 @@
 </script>
 
 <div class="row">
-	<div class="col-md-4">
+	<!-- <div class="col-md-4">
 		<h4>Listado</h4>
 
 		<ul class="list-group">
@@ -35,7 +35,7 @@
 		{:else}
 			<span>No hay datos agregados</span>
 		{/if}
-	</div>
+	</div> -->
 	<div class="col-md-4">
 		<div class="container rounded mt-3">
 			<div class="mb-3 row">
