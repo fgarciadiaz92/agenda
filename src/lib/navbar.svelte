@@ -2,7 +2,7 @@
 	import { base } from "$app/paths";
 </script>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
 	<div class="container-fluid">
 	  <a class="navbar-brand" href="{base}/">Inicio</a>
 	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@
 	  <div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
 		  <li class="nav-item">
-			<a class="nav-link active" aria-current="page" href="{base}/resumen">Materias</a>
+			<a class="nav-link active" aria-current="page" href="{base}/materias">Materias</a>
 		  </li>
 		  <li class="nav-item">
 			<a class="nav-link" href="{base}/planer">Planer</a>

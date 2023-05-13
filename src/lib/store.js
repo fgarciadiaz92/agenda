@@ -13,6 +13,9 @@ export let planer= {
   intervaloAviso: null
 };
 
+
+export const listadoMateria=writable([])
+
 export const agenda = function () {
 
     let { subscribe, set } = writable([])
