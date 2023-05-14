@@ -1,29 +1,46 @@
 <script>
-	import PortadaMateria from "$lib/PortadaMateria.svelte";
-	import Icon from "@iconify/svelte";
-	import Swal from 'sweetalert2'
-	import { listadoMateria } from "$lib/store";
-
-	let materia={
-		nombre:null,
-		descripcion:null,
-
-	}
-
-
-	function agregarMateria(){
-		
-		if(materia.nombre != null){
-			$listadoMateria.push(materia)
-			Swal.fire({
-				title: 'Agregado',
-				text: 'Se agrego correctamente ',
-				icon: 'success',
-				confirmButtonText: 'Aceptar'
-			})
+	// @ts-nocheck
+	
+		import { onMount } from 'svelte';
+		import PortadaMateria from "$lib/PortadaMateria.svelte";
+		import Icon from "@iconify/svelte";
+		import Swal from 'sweetalert2'
+		import { listadoMateria } from "$lib/store";
+	
+		let materia={
+			nombre:null,
+			descripcion:null,
 		}
-	}
-</script>
+	
+		let modal;
+	
+		onMount(() => {
+			var myModalEl = document.getElementById('agregarMateriaModal');
+			modal = new bootstrap.Modal(myModalEl);
+		});
+	
+		function agregarMateria(){
+			
+			if(materia.nombre != null){
+				$listadoMateria = [...$listadoMateria, materia];
+				Swal.fire({
+					title: 'Agregado',
+					text: 'Se agrego correctamente ',
+					icon: 'success',
+					confirmButtonText: 'Aceptar'
+				}).then((result) => {
+					if (result.isConfirmed) {
+						if(modal) modal.hide();
+						materia = {
+							nombre: null,
+							descripcion: null,
+						};
+					}
+				});
+			}
+		}
+	</script>
+	
 
 
 <svelte:head>
@@ -51,7 +68,7 @@
       </div>
       <div class="modal-footer">
         <button type="button"  class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-outline-success" on:click={agregarMateria}>Agregar</button>
+        <button type="button" class="btn btn-outline-success" on:click={agregarMateria} >Agregar</button>
       </div>
     </div>
   </div>
@@ -71,21 +88,18 @@
   </div>
   
   
-  <div class="container text-center mt-3">
+  {#if $listadoMateria.length <= 0}
+  	<p class="text-center">Sin informacion cargada</p>
+  {:else} 
+	
+
+  <div class="container text-center mb-3">
 	<div class="row align-items-start">
+		{#each $listadoMateria as materia}
 	  <div class="col mt-3">
-		<PortadaMateria/>
+		<PortadaMateria titulo={materia.nombre} descripcion={materia.descripcion}/>
 	  </div>
-	  <div class="col mt-3">
-		<PortadaMateria/>
-	  </div>
-	  <div class="col mt-3">
-		<PortadaMateria/>
-	  </div>
-	  <div class="col mt-3">
-		<PortadaMateria/>
-	  </div>
-	  
+	  {/each}	  
 	</div>
   </div>
-	
+{/if}
