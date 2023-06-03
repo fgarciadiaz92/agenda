@@ -5,7 +5,7 @@
 		import PortadaMateria from "$lib/PortadaMateria.svelte";
 		import Icon from "@iconify/svelte";
 		import Swal from 'sweetalert2'
-		import { listadoMateria } from "$lib/store";
+		import {asignaturas} from "$lib/store.js"
 	
 		let materia={
 			nombre:null,
@@ -13,16 +13,20 @@
 		}
 	
 		let modal;
-	
-		onMount(() => {
+		let listadoAsignatura=[];
+		onMount(async () => {
 			var myModalEl = document.getElementById('agregarMateriaModal');
 			modal = new bootstrap.Modal(myModalEl);
+
+			listadoAsignatura= await asignaturas.listado(2023)
+			console.log("listadoAsignatura",listadoAsignatura)
 		});
+
 	
-		function agregarMateria(){
+		async function agregarMateria(){
 			
 			if(materia.nombre != null){
-				$listadoMateria = [...$listadoMateria, materia];
+				await asignaturas.crear(materia.nombre)
 				Swal.fire({
 					title: 'Agregado',
 					text: 'Se agrego correctamente ',
@@ -88,18 +92,21 @@
   </div>
   
   
-  {#if $listadoMateria.length <= 0}
+  {#if listadoAsignatura.length <= 0}
   	<p class="text-center">Sin informacion cargada</p>
   {:else} 
 	
 
   <div class="container text-center mb-3">
 	<div class="row align-items-start">
-		{#each $listadoMateria as materia}
+		{#each listadoAsignatura as materia}
 	  <div class="col mt-3">
-		<PortadaMateria titulo={materia.nombre} descripcion={materia.descripcion}/>
+		<PortadaMateria titulo={materia.titulo} fechaCreacion={materia.fechaCreacion}/>
 	  </div>
 	  {/each}	  
 	</div>
   </div>
 {/if}
+
+
+

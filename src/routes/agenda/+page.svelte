@@ -1,3 +1,9 @@
+<script>
+	import {agenda} from "$lib/store"
+
+	console.log("agenda",agenda.listado())
+</script>
+
 <svelte:head>
 	<title>Agenda</title>
 	<meta name="description" content="Svelte demo app" />
