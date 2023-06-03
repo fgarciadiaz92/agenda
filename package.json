@@ -19,6 +19,7 @@
 		"@sveltejs/kit": "^1.5.0",
 		"@types/cookie": "^0.5.1",
 		"autoprefixer": "^10.4.14",
+		"daisyui": "^3.0.1",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
@@ -28,12 +29,14 @@
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"typescript": "^5.0.0",
-		"vite": "^4.2.0"
+		"vite": "^4.2.0",
+		"tailwindcss": "^3.3.1",
+		"@sveltejs/vite-plugin-svelte": "^2.0.4"
 	},
 	"type": "module",
 	"dependencies": {
 		"firebase": "^9.18.0",
-		"fullcalendar": "^6.1.5",
+		"fullcalendar": "^6.1.8",
 		"moment": "^2.29.4",
 		"sweetalert2": "^11.7.5"
 	}

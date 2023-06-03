@@ -1,7 +1,7 @@
 <script>
 	import {agenda} from "$lib/store"
+	import Calendario from "$lib/Calendario.svelte";
 
-	console.log("agenda",agenda.listado())
 </script>
 
 <svelte:head>
@@ -9,4 +9,4 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<h1>Agenda</h1>
+<Calendario/>

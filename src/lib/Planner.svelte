@@ -16,26 +16,6 @@
 </script>
 
 <div class="row">
-	<!-- <div class="col-md-4">
-		<h4>Listado</h4>
-
-		<ul class="list-group">
-			<li class="list-group-item">
-				<input class="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched" />
-				<label class="form-check-label stretched-link" for="firstCheckboxStretched"
-					>First checkbox</label
-				>
-			</li>
-		</ul>
-		{#if $planerListado.length > 0}
-			{#each $planerListado as data}
-				<p>HOLA</p>
-				{data.titulo}
-			{/each}
-		{:else}
-			<span>No hay datos agregados</span>
-		{/if}
-	</div> -->
 	<div class="col-md-4">
 		<div class="container rounded mt-3">
 			<div class="mb-3 row">

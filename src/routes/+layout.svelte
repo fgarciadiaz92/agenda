@@ -1,13 +1,14 @@
 <script>
-	import './styles.css';
+	import '../app.css';
 	import Navbar from '$lib/navbar.svelte';
+	import RutaActual from '$lib/RutaActual.svelte';
 
 </script>
 
 <div class="app">
 	<Navbar/>
 	<main>
-		<div class="container-fluid">
+		<div>
 		<slot />
 		</div>
 	</main>

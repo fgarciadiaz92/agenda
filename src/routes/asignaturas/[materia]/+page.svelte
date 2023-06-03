@@ -11,9 +11,7 @@
 
 let dataCarpetas=[]
   onMount(async () => {
-    console.log("palabra",$page)
     dataCarpetas= await asignaturas.detalleCarpeta($page.params.materia)
-    console.log("dataCarpetas",dataCarpetas)
 		});
 
 </script>
@@ -24,14 +22,10 @@ let dataCarpetas=[]
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-
-
-<div class="container text-center mb-3">
-	<div class="row align-items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
     {#each dataCarpetas as carperta}
-	  <div class="col mt-3">
-      <CarpetaMateria titulo={carperta.nombre} cantidadDoc={carperta.cantidadDocumentos} ultimaModificacion={carperta.ultimaModificacion}/>
-	  </div>
-	  {/each}	  
-	</div>
-  </div>
+			<div class="col mt-5">
+		  <CarpetaMateria titulo={carperta.nombre} cantidadDoc={carperta.cantidadDocumentos} ultimaModificacion={carperta.ultimaModificacion}/>
+			</div>
+		{/each}
+	</div>	 

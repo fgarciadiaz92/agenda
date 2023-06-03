@@ -25,28 +25,13 @@ async function enviarSMS(){
 </script>
 
 
-<h1>Resumen</h1>
-
-<!-- <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">MENSAJE</span>
+<div class="hero min-h-screen bg-base-200">
+  <div class="hero-content flex-col lg:flex-row">
+    <img src="https://terapiaocupacionalpanama.files.wordpress.com/2020/05/cropped-logo-terapia-ocupacional-en-accion-transparente-1.png" class="max-w-sm rounded-lg shadow-2xl "/>
+    <div>
+      <h1 class="text-5xl font-bold">Rabbit Center</h1>
+      <p class="py-6">WebApp para gestionar documentos y ayudar a mi ratoña con su carrera</p>
+      <button class="btn btn-primary">Iniciar</button>
     </div>
-    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" bind:value={mensaje}>
   </div>
-  <button type="button" class="btn btn-primary" on:click={enviarSMS}>Enviar SMS</button>
-
-<button type="button" class="btn btn-primary" on:click={actualizarMensajes}>Actualizar</button>
- -->
-
-
-<!-- 
- <div>
-    {#if dataMensaje != null}
-    {#each dataMensaje.result as message}
-      <p>{message.message.text}</p>
-    {/each}
-    {:else}
-    <p>Sin mensaje ,favor actualizar</p>
-    {/if}
 </div>
-    -->
