@@ -6,6 +6,8 @@ import {obtenerUltimoMensaje} from "$lib/utilidades.js"
 export const urlBase="https://localhost:7207"
 export const planerListado=writable([])
 
+export const dataIntento=writable([])
+
 export let planer= {
   titulo: null,
   fechaEvento: null,
